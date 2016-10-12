@@ -443,6 +443,23 @@ function populateModalCompareFavorites(currentProduct) {
 	}
 	favoritesTable.appendChild(imageRow);
 	
+	var productRow = document.createElement("tr");
+	var product = document.createElement("td");
+	product.innerHTML = "Product";
+	productRow.appendChild(product);
+	product = document.createElement("td");
+	product.innerHTML = currentProduct.brand + " " + currentProduct.model;
+	productRow.appendChild(product);
+	for (var i = 0; i < favorites.length; i++)
+	{
+		if (favorites[i].id != currentProduct.id) {
+			product = document.createElement("td");
+			product.innerHTML = favorites[i].brand + " " + favorites[i].model;
+			productRow.appendChild(product);		
+		}
+	}
+	favoritesTable.appendChild(productRow);
+    
 	var priceRow = document.createElement("tr");
 	var price = document.createElement("td");
 	price.innerHTML = "Price";
