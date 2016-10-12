@@ -72,7 +72,7 @@ function amazon(err, metadataAndMetametaData)
     try {
         var price = Number(unwrappedMetadata["price"].substring(1));
         var imageUrl = unwrappedMetadata["main_images"][0]["location"];
-        var averageRating = Number(unwrappedMetadata["overall_rating"].substring(0, 2));
+        var averageRating = Number(unwrappedMetadata["overall_rating"].substring(0, 3));
 
         products[i].price = price;
         products[i].imageUrl = imageUrl;
